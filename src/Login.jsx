@@ -22,7 +22,7 @@ const Login = () => {
       localStorage.setItem('token' , res.data.token);
       toast.success(res.data.message);
       setLoading(false);  
-      setUserInfo({ email: "", message: "" });
+      setUserInfo({ email: "", password: "" });
       navigate("/");
     } catch (err) {
       console.log(err);
