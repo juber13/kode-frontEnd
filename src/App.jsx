@@ -3,19 +3,21 @@ import './App.css'
 import {Toaster } from 'react-hot-toast'
 
 import { BrowserRouter , Routes  , Route } from 'react-router-dom'
-import Signup from './Signup'
+import Register from './Register'
 import Login from './Login'
 import Header from './Header'
 import Home from './Home'
 function App() {
+ const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token')); 
+
 
 
   return (
     <BrowserRouter>
       <Header/>
       <Routes>
-         <Route path='/' element={<Home />} /> 
-        <Route path='/signup' element={<Signup />} />
+        {isLoggedIn && <Route path='/' element={<Home />} /> }
+        <Route path='/signup' element={<Register />} />
         <Route path='/login' element={<Login />} />
       </Routes>
       <Toaster position='top-center' reverseOrder={false} />
