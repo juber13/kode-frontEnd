@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
-const SignUp = () => {
+const Signup = () => {
   const [userInfo, setUserInfo] = useState({email: "", message: ""});
 
   const [loading , setLoading] = useState(false)
@@ -82,4 +82,4 @@ const SignUp = () => {
   );
 };
 
-export default SignUp;
+export default Signup;
