@@ -8,7 +8,7 @@ import Login from './Login'
 import Header from './Header'
 import Home from './Home'
 function App() {
- const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token')); 
+ const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('userInfo')); 
 
 
 
