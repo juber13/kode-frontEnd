@@ -17,9 +17,13 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       setLoading(true);
-      const res = await axios.post("https://kode-backend.onrender.com/api/login",userInfo);
+      const res = await axios.post("http://localhost:5050/api/login",userInfo);
       console.log(res.data)
-      localStorage.setItem('token' , res.data.token);
+      localStorage.setItem("userInfo", JSON.stringify({
+        email: res.data.email,
+        token: res.data.token,
+      }));
+      
       toast.success(res.data.message);
       setLoading(false);  
       setUserInfo({ email: "", password: "" });

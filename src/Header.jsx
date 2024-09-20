@@ -6,7 +6,7 @@ import {useNavigate} from 'react-router-dom'
 
 const Header = () => {
       const navigate = useNavigate();
-      const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('token')); 
+      const [isLoggedIn, setIsLoggedIn] = useState(localStorage.getItem('userInfo')); 
 
     const handleLogout = async () => {
       try {

@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 const Home = () => {
-    const user = JSON.parse(localStorage.getItem('user'));
+    const [userName , setUserName] = useState(JSON.parse(localStorage.getItem('userInfo')));
   return (
-    <div className='w-full h-screen bg-red-300 flex items-center justify-center text-3xl'>Welcome {user}</div>
+    <div className='w-full h-screen bg-red-300 flex items-center justify-center text-3xl'>Welcome {userName?.email.slice(0 , 5)}</div>
   )
 }
 
