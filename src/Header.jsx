@@ -35,7 +35,7 @@ const Header = () => {
         {isLoggedIn ? (
         <div className='right-info border p-1 font-bold' onClick={handleLogout}>Logout</div>
         ) : (
-        <div className='right-info border p-1 font-bold' onClick={() => navigate("/login")}>Login</div>
+        <div className='right-info cursor-pointer border p-1 font-bold' onClick={() => navigate("/login")}>Login</div>
         )}
     </div>
   )
