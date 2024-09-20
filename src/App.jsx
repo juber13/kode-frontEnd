@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './App.css'
 import {Toaster } from 'react-hot-toast'
 
@@ -14,9 +14,13 @@ function App() {
 
   return (
     <BrowserRouter>
-      <Header/>
+      <Header />
       <Routes>
-        {isLoggedIn && <Route path='/' element={<Home />} /> }
+        {isLoggedIn ? (
+          <Route path='/' element={<Home />} />
+        ) : (
+          <Route path='/login' element={<Login />} />
+        )}
         <Route path='/signup' element={<Register />} />
         <Route path='/login' element={<Login />} />
       </Routes>
