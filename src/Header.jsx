@@ -15,14 +15,12 @@ const Header = () => {
           "https://kode-backend.onrender.com/api/logout"
         );
 
-        // Clear user data from local storage or session storage
-        localStorage.removeItem("token"); // Adjust based on how you store the token
-        sessionStorage.removeItem("user"); // If applicable
-        // Show success message
-        toast.success(response.data.message);
+        localStorage.removeItem("token"); 
+        sessionStorage.removeItem("user"); 
 
+        toast.success(response.data.message);
         // Redirect to login page
-        navigate("/login"); // Adjust the path as necessary
+        navigate("/login"); 
       } catch (error) {
         console.error("Logout failed:", error);
         toast.error("Logout failed, please try again.");

@@ -5,7 +5,7 @@ import { Link , useNavigate } from "react-router-dom";
 
 const Login = () => {
 
-  const [userInfo, setUserInfo] = useState({ email: "", message: "" });
+  const [userInfo, setUserInfo] = useState({ email: "", password: "" });
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate(); 
 
@@ -17,10 +17,9 @@ const Login = () => {
   const handleLogin = async () => {
     try {
       setLoading(true);
-      const res = await axios.post(
-        "https://kode-backend.onrender.com/api/login",
-        userInfo
-      );
+      const res = await axios.post("https://kode-backend.onrender.com/api/login",userInfo);
+      console.log(res.data)
+      localStorage.setItem('token' , res.data.token);
       toast.success(res.data.message);
       setUserInfo({ email: "", message: "" });
       navigate("/");
