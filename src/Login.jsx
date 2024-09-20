@@ -18,7 +18,7 @@ const Login = () => {
     try {
       setLoading(true);
       const res = await axios.post(
-        "http://localhost:5050/api/login",
+        "https://kode-backend.onrender.com/api/login",
         userInfo
       );
       toast.success(res.data.message);

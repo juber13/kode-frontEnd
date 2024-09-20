@@ -11,7 +11,9 @@ const Header = () => {
     const handleLogout = async () => {
       try {
         // Call the backend logout API
-        const response = await axios.post("http://localhost:5050/api/logout");
+        const response = await axios.post(
+          "https://kode-backend.onrender.com/api/logout"
+        );
 
         // Clear user data from local storage or session storage
         localStorage.removeItem("token"); // Adjust based on how you store the token

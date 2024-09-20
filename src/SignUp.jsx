@@ -18,7 +18,10 @@ const SignUp = () => {
     e.preventDefault();
     try {
       setLoading(true)
-      const res = await axios.post("http://localhost:5050/api/send-email",userInfo);
+      const res = await axios.post(
+        "https://kode-backend.onrender.com/api/send-email",
+        userInfo
+      );
       localStorage.setItem("token", res.data.token);
       toast.success(res.data.message);
       setUserInfo({ email: "", message: "" });
